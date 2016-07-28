@@ -5,9 +5,9 @@ app.controller('NavCtrl', function($scope){
 	// let currentUser = null;
 
 $scope.navItems = [////////the urls are directing to different parts of the page
-    {name: "My Locations", url: "#/locations/saved"},
-    {name: "Add New Location", url: "#/locations/new"},
-    {name: "Register", url: "#/register"}
+    {name: "My Locations", url: "#/saved"},
+    {name: "Add New Location", url: "#/new"},
+    {name: "Sign In", url: "#/register"}
 ];
 });
 // 	$rootScope.searchText = {};
