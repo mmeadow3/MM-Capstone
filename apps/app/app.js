@@ -3,7 +3,14 @@
 var app = angular.module('app',['ngRoute'])
 .constant('FirebaseURL', "https://meadows-capstone.firebaseio.com/");
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, FBCreds) {
+  ///////FIREBASE////////////////
+  let authConfig = {
+    apiKey: FBCreds.apiKey,
+    authDomain: FBCreds.authDomain
+  };
+firebase.initializeApp(authConfig); ////////This is a predefined FB function
+
 
     $routeProvider.
         when('#/', {

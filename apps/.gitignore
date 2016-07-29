@@ -2,3 +2,5 @@ lib/node_modules
 lib/bower_components
 styles
 .firebaserc
+app/values/FirebaseCreds.js
+app/values/FBCreds.js

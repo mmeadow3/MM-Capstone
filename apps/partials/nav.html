@@ -3,6 +3,10 @@
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Why I Quit My Job (The App)</a>
+      <ul>
+      <a href="#/register" class="right hide-on-med-and-down" ng-show="!loggedIn">Sign In</a>
+      <a href="#/register" class="right hide-on-med-and-down" ng-click="logout()" ng-show="loggedIn">Logout</a>
+      </ul>
       <ul class="right hide-on-med-and-down" ng-repeat="link in navItems">
         <li><a href="{{link.url}}">{{link.name}}</a></li>
       </ul>

@@ -13,32 +13,32 @@
   <form class="col s8 offset-s2" ng-show="registerMode">
     <div class="row">
       <div class="input-field col s12">
-        <input id="email" type="email" class="validate">
+        <input id="email" type="email" ng-model="email" class="validate">
         <label for="email">Email</label>
       </div>
       <div class="input-field col s12">
-        <input id="password" type="password" class="validate">
+        <input id="password" type="password"  ng-model="password" class="validate">
         <label for="password">Password</label>
       </div>
     </div>
 
-    <div class="row"><div class="center-align"><button class="btn waves-effect waves-light">Register<i class="material-icons right">send</i></button></div></div>
+    <div class="row"><div class="center-align"><button ng-click="register()" class="btn waves-effect waves-light" >Register<i class="material-icons right">send</i></button></div></div>
   </form>
 
   <!-- ============= LOGIN FORM ============= -->
   <form class="col s8 offset-s2" ng-show="!registerMode">
     <div class="row">
       <div class="input-field col s12">
-        <input id="email" type="email" class="validate">
+        <input id="email" type="email" class="validate" ng-model="emailLogin">
         <label for="email">Email</label>
       </div>
       <div class="input-field col s12">
-        <input id="password" type="password" class="validate">
+        <input id="password" type="password" class="validate" ng-model="passwordLogin">
         <label for="password">Password</label>
       </div>
     </div>
 
-    <div class="row"><div class="center-align"><button class="btn waves-effect waves-light">Login<i class="material-icons right">send</i></button></div></div>
+    <div class="row"><div class="center-align"><button ng-click="login()" class="btn waves-effect waves-light">Login<i class="material-icons right">send</i></button></div></div>
   </form>
 
 </div>
