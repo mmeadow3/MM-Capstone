@@ -6,11 +6,14 @@ app.controller("NewLocation", function($scope, LocationFactory, $location, AuthF
     $('.carousel').carousel();
   });
 
+
+let currentUser = AuthFactory.getUser("currentUser");
+  $scope.user = currentUser;
   $scope.newTask = {
     title: "",
     location: "",
     emissions: "",
-    uid: null
+    uid: currentUser.uid
   };
 
 
@@ -23,3 +26,16 @@ app.controller("NewLocation", function($scope, LocationFactory, $location, AuthF
       })
     }
 });
+
+// $scope.addNew = function () {
+// 		LocationFactory.postNewLocation($scope.newTask)
+// 		.then(function (response) {
+// 			$scope.ShowNewBoard = false;
+// 			BoardFactory.getBoards()
+// 			.then(function (boardCollection) {
+// 			$scope.boards = boardCollection
+// 			});
+// 		});
+// 	}
+//
+// 	$scope.ShowNewBoard = false;

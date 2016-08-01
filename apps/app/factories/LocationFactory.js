@@ -1,7 +1,7 @@
 "use strict";
 
 
-app.factory("LocationFactory", function(FirebaseURL, $q, $http) {
+app.factory("LocationFactory", function(FirebaseURL, $q, $http, AuthFactory) {
 ////////////// $q ==== A service that helps you run functions asynchronously///////////
 // The $http service is a core Angular service that facilitates communication
 // with the remote HTTP servers via the browser's XMLHttpRequest object or via JSONP./////////
@@ -9,7 +9,11 @@ app.factory("LocationFactory", function(FirebaseURL, $q, $http) {
   let getLocationList = function() {
     let locations = [];
     return $q(function(resolve, reject) {
-      $http.get(`${FirebaseURL}/locations.json`)
+      let currentUser = AuthFactory.getUser('currentUser');
+			console.log(currentUser);
+			let userId = currentUser
+			console.log("user id?", userId);
+      $http.get(`${FirebaseURL}/locations.json?orderBy="uid"&equalTo="${userId}"`)
       .success(function(locationObj) {
         if (locationObj) {
         let locationCollection = locationObj;
