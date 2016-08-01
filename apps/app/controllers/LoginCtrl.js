@@ -60,25 +60,19 @@ $scope.registerMode = true;
         // .then(function(){
     		// 		if(userExists === false){
     		// 			let userObject = {
-    		// 				name: currentUser.displayName,
     		// 				email: currentUser.email,
     		// 				uid: currentUser.uid
     		// 			}
         //       console.log(userObject);
-    		// 			AuthFactory.createUser(userObject)
-    		// 		}
-    		// 	})
+    			// 		AuthFactory.createUser(userObject)
+    			// 	}
+    			// })
 
     			.then(function () {
     				$location.url('/saved')
     			})
     		}
 
-        $scope.logout = function(){
-      		firebase.auth().signOut();
-      		$location.url("/");
-      		console.log("signed out");
-      	}
 
 
 

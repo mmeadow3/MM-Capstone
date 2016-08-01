@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('NavCtrl', function($scope, $location){
+app.controller('NavCtrl', function($scope, $location, AuthFactory){
 ////////log out function/////////////
   $scope.logout = function(){
     firebase.auth().signOut();
@@ -8,20 +8,20 @@ app.controller('NavCtrl', function($scope, $location){
     console.log("signed out");
   }
 
-
+$(".button-collapse").sideNav();
 //////////////This changes the view of logged in or out///////////////
 	firebase.auth().onAuthStateChanged(function(user){
 		if(user){
 			// localStorageService.set("currentUser", user)
 			$scope.$apply(function(){
+        AuthFactory.setUser(user.uid);
         $scope.loggedIn = true;
-        console.log("WE LOGGED IN");
 			})
 		}
 		else {
 			$scope.$apply(function(){
 				$scope.loggedIn = false;
-        console.log("logged TF OUT");
+        AuthFactory.setUser(null)
 			})
 			// localStorageService.set("currentUser", "null")
 		}
