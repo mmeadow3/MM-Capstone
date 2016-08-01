@@ -1,13 +1,28 @@
 <div class="row container">
-  <div class="col s12" style="text-align: center"><h3>My Locations</h3></div>
-  <a href="#/new"><button class="btn btn-danger" ng-click="Remove(board.id)" >Add New Location</button></a>
-  <div ng-repeat="location in locations">
-    <div class="col s12 m4 l4 locations">
-      <h2>{{location.title}}</h2>
-      <h3>{{location.location}}</h3>
-      <h5>Emission to be tested for: {{location.emissions}}</h5>
-      <button class="btn btn-danger" ng-click="remove(location)">X</button>
-      <a href="#/locations/{{location.id}}"><button class="btn btn-danger" ng-click="edit()" >Edit</button></a>
+  <div class="col s12" style="text-align: center"><h3>My Locations</h3>
+    <a href="#/new"><button class="btn btn-danger" ng-click="Remove(board.id)">Add New Location</button></a>
+  </div>
+
+
+<div class="container">
+  <div class="row" ng-repeat="location in locations">
+    <div class="card col s12 m4 l3">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="images/ACC Al.jpg">
+        <span class="card-title">{{location.title}}</span>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><i class="material-icons right">visibility</i></span>
+        <h2>{{location.title}}</h2>
+        <h3>{{location.location}}</h3>
+        <h5>Emission to be tested for: {{location.emissions}}</h5>
+        <button class="btn btn-danger" ng-click="remove(location)"><i class="small material-icons">delete</i></button>
+        <a href="#/locations/{{location.id}}"><button class="btn btn-danger" ng-click="edit()"><i class="small material-icons">edit</i></button></a>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+        <p>{{location.title}}</p>
+      </div>
     </div>
   </div>
 </div>

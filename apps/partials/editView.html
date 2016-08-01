@@ -1,12 +1,45 @@
-<h1>Edit: {{selectedLocation.title}}</h1>
 
 
-<h4>Location: {{selectedLocation.title}}</h4>
+<!-- Location: {{selectedLocation.title}}</h4>
 <input type="text" name="name" ng-model="title" ng-show="edited" placeholder="enter text here">
 <h4>City and State: {{selectedLocation.location}}</h4>
 <input type="text" name="name" ng-model="location" ng-show="edited" placeholder="enter text here">
 <h4>Emissions: {{selectedLocation.emissions}}</h4>
-<input type="text" name="name" ng-model="emissions" ng-show="edited" placeholder="enter text here">
+<input type="text" name="name" ng-model="emissions" ng-show="edited" placeholder="enter text here"> -->
 
-<button type="button" name="button" ng-click="edit(thingy)">Edit</button><br>
-<button type="button" name="button" ng-click="save(thingy)" ng-show="edited">Save</button>
+<h1>Edit: {{selectedLocation.title}}</h1><br>
+<div class="row">
+   <div class="input-field col s12">
+     <input value="{{selectedLocation.title}}" type="text" ng-model="title" class="validate" ng-show="edited">
+     <label class="active" for="first_name2">Location: {{selectedLocation.title}}</label>
+   </div>
+ </div>
+  <div class="row">
+   <div class="input-field col s12">
+     <input value="{{selectedLocation.location}}" type="text" ng-model="location" class="validate" ng-show="edited">
+     <label class="active" for="first_name2">City and State: {{selectedLocation.location}}</label>
+   </div>
+ </div>
+ <div class="row">
+   <div class="input-field col s12">
+     <input value="{{selectedLocation.emissions}}" type="text" ng-model="emissions" class="validate" ng-show="edited">
+     <label class="active" for="first_name2">Emissions: {{selectedLocation.emissions}}</label>
+   </div>
+ </div>
+
+   <!-- file uploader -->
+   <form ng-show="edited" action="#">
+   <div class="file-field input-field">
+     <div class="btn">
+       <span>File</span>
+       <input type="file">
+     </div>
+     <div class="file-path-wrapper">
+       <input class="file-path validate" type="text">
+     </div>
+   </div>
+ </form>
+ <!-- end file uploader -->
+ </div>
+ <button type="button" name="button" ng-click="edit(thingy)">Edit</button><br>
+ <button type="button" name="button" ng-click="save(thingy)" ng-show="edited">Save</button>

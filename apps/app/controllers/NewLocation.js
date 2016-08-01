@@ -7,6 +7,10 @@ app.controller("NewLocation", function($scope, LocationFactory, $location) {
     emissions: ""
   };
 
+  $(document).ready(function(){
+      $('.carousel').carousel();
+    });
+
 
     $scope.addNew = function(){  ///////this is the ng-click defined in item-new.html
       console.log("added new item", $scope.newTask);
