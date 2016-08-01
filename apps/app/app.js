@@ -28,6 +28,10 @@ firebase.initializeApp(authConfig); ////////This is a predefined FB function
         .when('/register', {
           templateUrl: 'partials/loginRegister.html',
           controller: 'LoginCtrl'
+        })
+        .when('/locations/:locationId', {
+          templateUrl: 'partials/editView.html',
+          controller: 'editCtrl'
         }).
         otherwise('/');
 });

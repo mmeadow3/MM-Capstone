@@ -1,0 +1,12 @@
+<h1>Edit: {{selectedLocation.title}}</h1>
+
+
+<h4>Location: {{selectedLocation.title}}</h4>
+<input type="text" name="name" ng-model="title" ng-show="edited" placeholder="enter text here">
+<h4>City and State: {{selectedLocation.location}}</h4>
+<input type="text" name="name" ng-model="location" ng-show="edited" placeholder="enter text here">
+<h4>Emissions: {{selectedLocation.emissions}}</h4>
+<input type="text" name="name" ng-model="emissions" ng-show="edited" placeholder="enter text here">
+
+<button type="button" name="button" ng-click="edit(thingy)">Edit</button><br>
+<button type="button" name="button" ng-click="save(thingy)" ng-show="edited">Save</button>

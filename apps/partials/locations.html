@@ -1,28 +1,13 @@
 <div class="row container">
-  <div class="col s12" style="text-align: center" ><h3>My Locations</h3></div>
-
- <button class="btn btn-danger" ng-click="Remove(board.id)">Add New Location</button>
-
+  <div class="col s12" style="text-align: center"><h3>My Locations</h3></div>
+  <a href="#/new"><button class="btn btn-danger" ng-click="Remove(board.id)" >Add New Location</button></a>
   <div ng-repeat="location in locations">
     <div class="col s12 m4 l4 locations">
-    <h2>{{location.title}}</h2>
-    <h3>{{location.location}}</h3>
-    <h5>Emission to be tested for: {{location.emissions}}</h5>
-    <button class="btn btn-danger" ng-click="remove(location)">X</button>
-  </div>
+      <h2>{{location.title}}</h2>
+      <h3>{{location.location}}</h3>
+      <h5>Emission to be tested for: {{location.emissions}}</h5>
+      <button class="btn btn-danger" ng-click="remove(location)">X</button>
+      <a href="#/locations/{{location.id}}"><button class="btn btn-danger" ng-click="edit()" >Edit</button></a>
+    </div>
   </div>
 </div>
-
-
-
-
-<!-- <div class="newBoard" ng-show="ShowNewBoard">
-	<h2>Add ne</h2>
-	<input type="text" placeholder="Title" ng-model="newBoard.title"/>
-	<input type="text" placeholder="Description" ng-model="newBoard.description"/>
-	<div class="boardBtnBox">
-		<button class="btn btn-normal" ng-click="AddBoard()">Add</button>
-		<button class="btn btn-danger" ng-click="ShowNewBoard = !ShowNewBoard">X</button>
-	</div>
-	<img src="img/puddle-jump.jpeg" />
-</div> -->
