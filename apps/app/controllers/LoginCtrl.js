@@ -51,6 +51,9 @@ app.controller("LoginCtrl", function($scope, $location, AuthFactory){
 		})
 	}
 
+
+
+$scope.registerMode = true;
   $scope.login = function() {
     console.log($scope.emailLogin);
     firebase.auth().signInWithEmailAndPassword($scope.emailLogin, $scope.passwordLogin)
@@ -78,21 +81,6 @@ app.controller("LoginCtrl", function($scope, $location, AuthFactory){
       	}
 
 
-      	firebase.auth().onAuthStateChanged(function(user){
-      		if(user){
-      			// localStorageService.set("currentUser", user)
-      			$scope.$apply(function(){
-              $scope.loggedIn = true;
-              console.log("logged In");
-      			})
-      		}
-      		else {
-      			$scope.$apply(function(){
-      				$scope.loggedIn = false;
-      			})
-      			// localStorageService.set("currentUser", "null")
-      		}
-      	})
 
 
 });
