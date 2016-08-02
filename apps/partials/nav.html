@@ -14,7 +14,7 @@
       <a href="#/register" class="right hide-on-med-and-down" ng-click="logout()" ng-show="loggedIn">Logout</a>
       </ul>
       <ul class="right hide-on-med-and-down" ng-repeat="link in navItems">
-        <li><a href="{{link.url}}">{{link.name}}</a></li>
+        <li><a href="{{link.url}}" ng-show="loggedIn">{{link.name}}</a></li>
       </ul>
       <!-- ////////////////////mobile view//////////////////////// -->
       <ul class="side-nav" id="mobile" >

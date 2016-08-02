@@ -12,7 +12,6 @@ $(".button-collapse").sideNav();
 //////////////This changes the view of logged in or out///////////////
 	firebase.auth().onAuthStateChanged(function(user){
 		if(user){
-			// localStorageService.set("currentUser", user)
 			$scope.$apply(function(){
         AuthFactory.setUser(user.uid);
         $scope.loggedIn = true;
@@ -23,7 +22,6 @@ $(".button-collapse").sideNav();
 				$scope.loggedIn = false;
         AuthFactory.setUser(null)
 			})
-			// localStorageService.set("currentUser", "null")
 		}
 	})
 

@@ -20,6 +20,11 @@ app.controller("LoginCtrl", function($scope, $location, AuthFactory){
   $scope.register = function(){
       console.log($scope.email);
       firebase.auth().createUserWithEmailAndPassword($scope.email, $scope.password)
+      .catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        alert(errorMessage)
+      })
       .then(function(user){
             AuthFactory.getUserList()
             .then(function(userList){
@@ -67,8 +72,13 @@ $scope.registerMode = true;
     			// 		AuthFactory.createUser(userObject)
     			// 	}
     			// })
-
-    			.then(function () {
+          .catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            alert(errorMessage) //////can switch this out for a jQuery style alert
+})
+    	
+          .then(function () {
     				$location.url('/saved')
     			})
     		}

@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module('app',['ngRoute'])
+var app = angular.module('app',['ngRoute', 'ngMaterial'])
 .constant('FirebaseURL', "https://meadows-capstone.firebaseio.com/");
 
 app.config(function($routeProvider, FBCreds) {
