@@ -28,6 +28,21 @@
     </div>
   </div>
 </div>
+<div class="md-padding">
+  <div>
+    <h1 class="md-title">Zip Select</h1>
+    <div layout="row">
+      <md-input-container>
+        <label>Location</label>
+        <md-select ng-model="newTask.zip">
+          <md-optgroup label="items">
+            <md-option value="{{item.zip}}" ng-repeat="item in items" ng-model="selectedItem" md-selected-text="getSelectedText()">{{item.name}}</md-option>
+          </md-optgroup>
+        </md-select>
+      </md-input-container>
+    </div>
+  </div>
+</div>
 
 
 

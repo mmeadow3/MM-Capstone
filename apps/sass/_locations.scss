@@ -8,16 +8,17 @@
 //   display: inline-block;
 // }
 .container{
-  width: 90%;
+  width: 95%;
   text-align: center;
   padding: 10px 10px;
 }
 .activator{
-  min-width: 320px;
-  min-height: 240px;
+  width: 320px;
+  height: 240px;
 }
 
 .card{
   min-width: 32%;
   border: 1px solid black;
+  height: 600px;
 }

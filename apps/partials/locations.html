@@ -8,7 +8,7 @@
   <div class="row">
     <div class="card col s12 l4" ng-repeat="location in locations">
       <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="{{location.image}}">
+        <img class="activator" ng-src="{{location.image}}">
         <span class="card-title">{{location.title}}</span>
       </div>
       <div class="card-content">
@@ -20,8 +20,10 @@
         <a href="#/locations/{{location.id}}"><button class="btn btn-danger" ng-click="edit()"><i class="small material-icons">edit</i></button></a>
       </div>
       <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">{{location.title}}<i class="material-icons right">close</i></span>
+        <i class="material-icons right">close</i><br>
+        <span class="card-title grey-text text-darken-4">{{location.title}}</span>
         <p>{{location.title}}</p>
+        <p>zip code: {{location.zip}}</p>
       </div>
     </div>
   </div>

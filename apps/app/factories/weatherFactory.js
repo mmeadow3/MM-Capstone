@@ -2,12 +2,15 @@
 
 app.factory("weatherFactory", function($q, $http){
 
-    let movieList = (searchText) => {
+
+
+  var getWeatherZip = {};
+    getWeatherZip.getZip = function(zip){
         return $q(function(resolve, reject){
-          $http.get(`http://www.omdbapi.com/?s=${searchText + '*'}&y=&plot=short&r=json`)
-            .success(function(returnObject){
-              console.log("movies from OMDB", returnObject);
-                resolve(returnObject);
+          $http.get(`http://api.wunderground.com/api/0bcf1fb843ac4a47/geolookup/conditions/q/` + zip + `.json`)
+            .success(function(data){
+              console.log("API Call Worked", data);
+                resolve(data);
             })
             .error(function(error){
                 reject(error);
@@ -15,17 +18,17 @@ app.factory("weatherFactory", function($q, $http){
         });
     };
 
-    let getMovieDetailsFromId = (movieId) => {
-        return $q(function(resolve, reject){
-          $http.get(`http://www.omdbapi.com/?i=${movieId}&plot=short&r=json`)
-            .success(function(returnObject){
-                resolve(returnObject);
-            })
-            .error(function(error){
-                reject(error);
-            });
-        });
-    };
+    // let getMovieDetailsFromId = (movieId) => {
+    //     return $q(function(resolve, reject){
+          // $http.get(``)
+    //         .success(function(data){
+    //             resolve(data);
+    //         })
+    //         .error(function(error){
+    //             reject(error);
+    //         });
+    //     });
+    // };
 
-    return {movieList:movieList, getMovieDetailsFromId:getMovieDetailsFromId};
+    return {getWeatherZip:getWeatherZip};
 });

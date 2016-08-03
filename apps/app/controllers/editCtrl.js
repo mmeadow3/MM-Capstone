@@ -29,6 +29,7 @@ app.controller("editCtrl", function($scope, LocationFactory, $routeParams, Fireb
      {url: "images/Corning Diesel.jpg", name: "Corning"},
      {url: "images/JZ tulsa.jpg", name: "John Zink"},
      {url: "images/LeafRiver Energy Center Taylorsville, MS.jpg", name:"Leaf River"},
+     {url: "images/roxul-website_header_img.jpg", name:"Roxul"},
      {url: "images/PSC Metals Chattanooga.jpg", name: "PSC Metals"},
      {url: "images/Trojan Sandersville.jpg", name: "Trojan Battery"},
      {url: "images/Willaims compression 515 wilkes-barre, PA.jpg", name: "William St. 515"},
