@@ -8,6 +8,7 @@
 <input type="text" name="name" ng-model="emissions" ng-show="edited" placeholder="enter text here"> -->
 
 <h1>Edit: {{selectedLocation.title}}</h1><br>
+<div>
 <div class="row">
    <div class="input-field col s12">
      <input value="{{selectedLocation.title}}" type="text" ng-model="title" class="validate" ng-show="edited">
@@ -26,20 +27,22 @@
      <label class="active" for="first_name2">Emissions: {{selectedLocation.emissions}}</label>
    </div>
  </div>
-
-   <!-- file uploader -->
-   <form ng-show="edited" action="#">
-   <div class="file-field input-field">
-     <div class="btn">
-       <span>File</span>
-       <input type="file">
-     </div>
-     <div class="file-path-wrapper">
-       <input class="file-path validate" type="text">
+ <div class="md-padding">
+   <div>
+     <h1 class="md-title">Image Select</h1>
+     <div layout="row">
+       <md-input-container>
+         <label>Location</label>
+         <md-select ng-model="image">
+           <md-optgroup label="items">
+             <md-option value="{{item.url}}" ng-repeat="item in items" ng-model="selectedItem" md-selected-text="getSelectedText()">{{item.name}}</md-option>
+           </md-optgroup>
+         </md-select>
+       </md-input-container>
      </div>
    </div>
- </form>
- <!-- end file uploader -->
+ </div>
+
  </div>
  <button type="button" name="button" ng-click="edit(thingy)">Edit</button><br>
  <button type="button" name="button" ng-click="save(thingy)" ng-show="edited">Save</button>

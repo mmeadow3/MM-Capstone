@@ -77,7 +77,7 @@ $scope.registerMode = true;
             var errorMessage = error.message;
             alert(errorMessage) //////can switch this out for a jQuery style alert
 })
-    	
+
           .then(function () {
     				$location.url('/saved')
     			})

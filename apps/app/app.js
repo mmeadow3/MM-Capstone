@@ -1,6 +1,6 @@
 "use strict";
 
-var app = angular.module('app',['ngRoute', 'ngMaterial'])
+var app = angular.module('app',['ngRoute', 'ngMaterial', "LocalStorageModule"])
 .constant('FirebaseURL', "https://meadows-capstone.firebaseio.com/");
 
 app.config(function($routeProvider, FBCreds) {

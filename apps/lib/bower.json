@@ -21,7 +21,7 @@
     "bootstrap": "^3.3.6",
     "firebase": "^3.2.0",
     "jquery": "^1.9.1",
-    "angular-local-storage": "^0.2.7",
+    "angular-local-storage": "^0.3.0",
     "materialize": "^0.97.7"
   }
 }
