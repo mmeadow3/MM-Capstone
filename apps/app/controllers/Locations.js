@@ -20,5 +20,15 @@ app.controller('Locations', function($scope, LocationFactory) {
 			});
 		}
 
+///////////////// this is where the weatherFactory will be called////////////
+    // $scope.moveies = [];
+    //
+    // $scope.searchDatabase = function(movieToSearch) {
+    //   SearchDatabaseFactory.movieList(movieToSearch).then(function(monkeyButt){
+    //     console.log("in the controller, I see movie data...", monkeyButt);
+    //
+    //     $scope.movies = monkeyButt.Search
+    //   })
+    // }
 
 });

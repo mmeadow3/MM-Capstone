@@ -19,9 +19,9 @@
     <div layout="row">
       <md-input-container>
         <label>Location</label>
-        <md-select ng-model="newTask.image" md-selected-text="Select">
+        <md-select ng-model="newTask.image">
           <md-optgroup label="items">
-            <md-option value="{{item.url}}" ng-repeat="item in items">{{item.name}}</md-option>
+            <md-option value="{{item.url}}" ng-repeat="item in items" ng-model="selectedItem" md-selected-text="getSelectedText()">{{item.name}}</md-option>
           </md-optgroup>
         </md-select>
       </md-input-container>

@@ -19,13 +19,14 @@ app.controller("NewLocation", function($scope, LocationFactory, $location, AuthF
    ]
 
 
-   $scope.getSelectedText = function() {
-     if (newTask.image !== undefined) {
-       return newTask.image;
-     } else {
-       return "Please select an item";
-     }
-   };
+   $scope.selectedItem;
+      $scope.getSelectedText = function() {
+        if ($scope.selectedItem !== undefined) {
+          return "You have selected: Item " + $scope.selectedItem;
+        } else {
+          return "Please select an item";
+        }
+      };
 
 
 
