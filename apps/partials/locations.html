@@ -20,10 +20,10 @@
         <a href="#/locations/{{location.id}}"><button class="btn btn-danger" ng-click="edit()"><i class="small material-icons">edit</i></button></a>
       </div>
       <div class="card-reveal">
-        <i class="material-icons right">close</i><br>
-        <span class="card-title grey-text text-darken-4">{{location.title}}</span>
+        <span class="card-title grey-text text-darken-4">{{location.title}}<i class="material-icons right">close</i></span>
         <p>{{location.title}}</p>
         <p>zip code: {{location.zip}}</p>
+        <p>{{location.weather}}</p>
       </div>
     </div>
   </div>

@@ -40,25 +40,26 @@ let currentUser = AuthFactory.getUser("currentUser");
     emissions: "",
     uid: currentUser.uid,
     image: "",
-    zip: ""
+    zip: "",
+    weather: ""
     };
 
-    //////weather Api call
-    // weatherFactory.getWeatherZip.getZip()
-  //   .then(function(data){
-  //     console.log(data.current_observation.UV);
-  //     $scope.weather= data.current_observation.UV
-  // })
+
 
 
     $scope.addNew = function(){  ///////this is the ng-click defined in item-new.html
       console.log("added new item", $scope.newTask);
       console.log($scope.newTask.zip); //////correctly logs out zip
       $scope.newTask.uid = AuthFactory.getUser();
-      weatherFactory.getWeatherZip.getZip($scope.newTask.zip);  ///////taking zip code and passing it to weatherFactory////
+      weatherFactory.getWeatherZip.getZip($scope.newTask.zip)  ///////taking zip code and passing it to weatherFactory///
+      .then(function(data){
+      console.log(data.location.city)
+      $scope.newTask.weather = data.location.city
+    }).then (function(){
       LocationFactory.postNewLocation($scope.newTask)
       .then(function(){     ///////must resolve the promise
         $location.url('/saved'); ///////this then returns to the list view//////
       });
-    };
+    });
+  };
 });

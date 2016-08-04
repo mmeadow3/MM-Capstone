@@ -18,17 +18,6 @@ app.factory("weatherFactory", function($q, $http){
         });
     };
 
-    // let getMovieDetailsFromId = (movieId) => {
-    //     return $q(function(resolve, reject){
-          // $http.get(``)
-    //         .success(function(data){
-    //             resolve(data);
-    //         })
-    //         .error(function(error){
-    //             reject(error);
-    //         });
-    //     });
-    // };
 
     return {getWeatherZip:getWeatherZip};
 });

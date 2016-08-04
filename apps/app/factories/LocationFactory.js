@@ -11,8 +11,7 @@ app.factory("LocationFactory", function(FirebaseURL, $q, $http, AuthFactory) {
     let locations = [];
     return $q(function(resolve, reject) {
       let currentUser = AuthFactory.getUser('currentUser');
-			console.log(currentUser);
-			let userId = currentUser;
+			   let userId = currentUser;
 			console.log("user id?", userId);
       $http.get(`${FirebaseURL}/locations.json?orderBy="uid"&equalTo="${userId}"`)
       .success(function(locationObj) {
