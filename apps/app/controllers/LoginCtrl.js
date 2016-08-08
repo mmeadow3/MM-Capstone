@@ -23,7 +23,7 @@ app.controller("LoginCtrl", function($scope, $location, AuthFactory){
       .catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
-        alert(errorMessage)
+        Materialize.toast(errorMessage, 5000);
       })
       .then(function(user){
             AuthFactory.getUserList()
@@ -75,7 +75,7 @@ $scope.registerMode = true;
           .catch(function(error) {
             var errorCode = error.code;
             var errorMessage = error.message;
-            alert(errorMessage) //////can switch this out for a jQuery style alert
+            Materialize.toast(errorMessage, 5000);
 })
 
           .then(function () {

@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("NewLocation", function($scope, LocationFactory, $location, AuthFactory, weatherFactory) {
+app.controller("NewLocation", function($scope, LocationFactory, $location, AuthFactory) {
 
 
   $scope.items = [
@@ -40,8 +40,7 @@ let currentUser = AuthFactory.getUser("currentUser");
     emissions: "",
     uid: currentUser.uid,
     image: "",
-    zip: "",
-    weather: ""
+    zip: ""
     };
 
 
@@ -51,15 +50,10 @@ let currentUser = AuthFactory.getUser("currentUser");
       console.log("added new item", $scope.newTask);
       console.log($scope.newTask.zip); //////correctly logs out zip
       $scope.newTask.uid = AuthFactory.getUser();
-      weatherFactory.getWeatherZip.getZip($scope.newTask.zip)  ///////taking zip code and passing it to weatherFactory///
-      .then(function(data){
-      console.log(data.location.city)
-      $scope.newTask.weather = data.location.city
-    }).then (function(){
       LocationFactory.postNewLocation($scope.newTask)
       .then(function(){     ///////must resolve the promise
         $location.url('/saved'); ///////this then returns to the list view//////
       });
-    });
+    // });
   };
 });
