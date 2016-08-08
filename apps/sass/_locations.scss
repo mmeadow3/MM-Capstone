@@ -1,12 +1,4 @@
-// .locations {
-//   border: 1px solid black;
-//   text-align: center;
-//   border-radius: 7px;
-//   height: 500px;
-//   margin: 10px auto;
-//   max-width: 400px;
-//   display: inline-block;
-// }
+
 .container{
   width: 95%;
   text-align: center;
@@ -15,10 +7,33 @@
 .activator{
   width: 320px;
   height: 240px;
+  margin-top: 3px !important;
+  border-radius: 5px;
+}
+.row{
+  width: 100% !important;
 }
 
 .card{
-  min-width: 32%;
+  display: inline-block !important;
+  width: 32% !important;
   border: 1px solid black;
   height: 700px;
+  margin: 5px 3px !important;
+  border-radius: 2px;
+  background-color: #9CACBC
+}
+
+.weather{
+  display: inline-block;
+  width: 68px;
+}
+#weatherDiv{
+  text-align: center !important;
+}
+.card-reveal{
+  background-color: #9CACBC !important;
+  padding-right: 20px!important;
+  padding-left: 0px !important;
+  margin:0;
 }

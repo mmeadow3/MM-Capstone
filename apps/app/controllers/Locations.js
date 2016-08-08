@@ -21,7 +21,10 @@ app.controller('Locations', function($scope, LocationFactory, weatherFactory) {
 $scope.APIcall = function (zip) {
  weatherFactory.getWeatherZip.getZip(zip.zip)
 .then(function(data){
-zip.theWeather = data.location.city})
+//   console.log(data.forecast.simpleforecast.forecastday[0].icon_url);
+// zip.theWeather = data.forecast.simpleforecast.forecastday[0].icon_url})
+						zip.theWeather = data.forecast.simpleforecast;
+  });
 }
 
 getLocation();

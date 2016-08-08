@@ -23,7 +23,7 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
     .pipe(sass({
       sourceComments: true,
-      outputStyle: 'compressed'  // nested || compressed
+      outputStyle: 'nested'  // nested || compressed
     }))
     .on('error', function () {})
     // generate .maps

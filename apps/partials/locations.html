@@ -4,7 +4,7 @@
   </div>
 
 
-<div class="container">
+<!-- <div class="container"> -->
   <div class="row">
     <div class="card col s12 l4" ng-repeat="location in locations">
       <div class="card-image waves-effect waves-block waves-light">
@@ -21,11 +21,46 @@
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">{{location.title}}<i class="material-icons right">close</i></span>
-        <p>{{location.title}}</p>
-        <p>zip code: {{location.zip}}</p>
-        <p>{{getWeather(location.zip)}}</p>
-        <p>{{location.theWeather}}</p>
+        <p>Zip code: {{location.zip}}</p>
+        <!-- <p>{{location.theWeather}}</p> -->
+        <div id="weatherDiv">
+        <div class="weather">
+        <span>{{location.theWeather.forecastday[0].date.monthname}} {{location.theWeather.forecastday[0].date.day}}</span>
+        <img ng-src="{{location.theWeather.forecastday[0].icon_url}}" alt="weatherIcon">
+        <p>High: {{location.theWeather.forecastday[0].high.fahrenheit}}</p>
+        <p>Low: {{location.theWeather.forecastday[0].low.fahrenheit}}</p>
+        <!-- <p>{{location.theWeather.forecastday[0].conditions}}</p> -->
+        </div>
+        <div class="weather">
+        <span>{{location.theWeather.forecastday[1].date.monthname}} {{location.theWeather.forecastday[1].date.day}}</span>
+        <img ng-src="{{location.theWeather.forecastday[1].icon_url}}" alt="weatherIcon">
+        <p>High: {{location.theWeather.forecastday[1].high.fahrenheit}}</p>
+        <p>Low: {{location.theWeather.forecastday[1].low.fahrenheit}}</p>
+        <!-- <p>{{location.theWeather.forecastday[1].conditions}}</p> -->
+        </div>
+        <div class="weather">
+        <span>{{location.theWeather.forecastday[2].date.monthname}} {{location.theWeather.forecastday[2].date.day}}</span>
+        <img ng-src="{{location.theWeather.forecastday[2].icon_url}}" alt="weatherIcon">
+        <p>High: {{location.theWeather.forecastday[2].high.fahrenheit}}</p>
+        <p>Low: {{location.theWeather.forecastday[2].low.fahrenheit}}</p>
+        <!-- <p>{{location.theWeather.forecastday[2].conditions}}</p> -->
+        </div>
+        <div class="weather">
+        <span>{{location.theWeather.forecastday[3].date.monthname}} {{location.theWeather.forecastday[3].date.day}}</span>
+        <img ng-src="{{location.theWeather.forecastday[3].icon_url}}" alt="weatherIcon">
+        <p>High: {{location.theWeather.forecastday[3].high.fahrenheit}}</p>
+        <p>Low: {{location.theWeather.forecastday[3].low.fahrenheit}}</p>
+        <!-- <p>{{location.theWeather.forecastday[3].conditions}}</p> -->
+        </div>
+        <div class="weather">
+        <span>{{location.theWeather.forecastday[4].date.monthname}} {{location.theWeather.forecastday[4].date.day}}</span>
+        <img ng-src="{{location.theWeather.forecastday[4].icon_url}}" alt="weatherIcon">
+        <p>High: {{location.theWeather.forecastday[4].high.fahrenheit}}</p>
+        <p>Low: {{location.theWeather.forecastday[4].low.fahrenheit}}</p>
+        <!-- <p>{{location.theWeather.forecastday[4].conditions}}</p> -->
+        </div>
+      </div>
       </div>
     </div>
   </div>
-</div>
+<!-- </div> -->
