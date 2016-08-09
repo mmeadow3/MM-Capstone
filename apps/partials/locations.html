@@ -18,11 +18,11 @@
         <h5>Emission to be tested for: {{location.emissions}}</h5>
         <button class="btn btn-danger" ng-click="remove(location)"><i class="small material-icons">delete</i></button>
         <a href="#/locations/{{location.id}}"><button class="btn btn-danger" ng-click="edit()"><i class="small material-icons">edit</i></button></a>
+        <button ng-click="directionCall(location)">X</button>
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">{{location.title}}<i class="material-icons right">close</i></span>
         <p>Zip code: {{location.zip}}</p>
-        <!-- <p>{{location.theWeather}}</p> -->
         <div id="weatherDiv">
         <div class="weather">
         <span>{{location.theWeather.forecastday[0].date.monthname}} {{location.theWeather.forecastday[0].date.day}}</span>

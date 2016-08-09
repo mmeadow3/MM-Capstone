@@ -1,7 +1,7 @@
 "use strict";
 
 
-app.controller('Locations', function($scope, LocationFactory, weatherFactory) {
+app.controller('Locations', function($scope, LocationFactory, weatherFactory, DirectionFactory) {
     function getLocation(){
       LocationFactory.getLocationList()
     .then(function(locationCollection){
@@ -21,11 +21,14 @@ app.controller('Locations', function($scope, LocationFactory, weatherFactory) {
 $scope.APIcall = function (zip) {
  weatherFactory.getWeatherZip.getZip(zip.zip)
 .then(function(data){
-//   console.log(data.forecast.simpleforecast.forecastday[0].icon_url);
-// zip.theWeather = data.forecast.simpleforecast.forecastday[0].icon_url})
 						zip.theWeather = data.forecast.simpleforecast;
   });
 }
+
+$scope.directionCall = function (zip) {
+ DirectionFactory.getDirectionLocation.getZip(zip.zip)
+}
+
 
 getLocation();
 
