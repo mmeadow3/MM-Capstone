@@ -2,6 +2,7 @@
   <div class="col s12" style="text-align: center"><h3>My Locations</h3>
     <a href="#/new"><button class="btn btn-danger" ng-click="Remove(board.id)">Add New Location</button></a>
   </div>
+  <div id="map"></div>
 
 
 <!-- <div class="container"> -->
@@ -10,7 +11,6 @@
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" ng-src="{{location.image}}">
         <span class="card-title">{{location.title}}</span>
-        <button ng-click="directionCall(location)">X</button>
       </div>
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4"><i class="material-icons right" ng-mouseenter="APIcall(location)">visibility</i></span>
