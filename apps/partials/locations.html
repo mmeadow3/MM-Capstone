@@ -10,9 +10,10 @@
       <div class="card-image waves-effect waves-block waves-light">
         <img class="activator" ng-src="{{location.image}}">
         <span class="card-title">{{location.title}}</span>
+        <button ng-click="directionCall(location)">X</button>
       </div>
       <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4"><i class="material-icons right" ng-click="APIcall(location)">visibility</i></span>
+        <span class="card-title activator grey-text text-darken-4"><i class="material-icons right" ng-mouseenter="APIcall(location)">visibility</i></span>
         <h2>{{location.title}}</h2>
         <h3>{{location.location}}</h3>
         <h5>Emission to be tested for: {{location.emissions}}</h5>
