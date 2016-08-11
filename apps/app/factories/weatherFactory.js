@@ -18,6 +18,5 @@ app.factory("weatherFactory", function($q, $http){
         });
     };
 
-
     return {getWeatherZip:getWeatherZip};
 });

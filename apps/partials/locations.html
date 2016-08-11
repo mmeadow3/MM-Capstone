@@ -2,7 +2,7 @@
   <div class="col s12" style="text-align: center"><h3>My Locations</h3>
     <a href="#/new"><button class="btn btn-danger" ng-click="Remove(board.id)">Add New Location</button></a>
   </div>
-  <div id="map"></div>
+
 
 
 <!-- <div class="container"> -->
@@ -55,8 +55,15 @@
           <p>Low: {{location.theWeather.forecastday[4].low.fahrenheit}}</p>
         </div>
         <img class="map" width="300" src="http://maps.googleapis.com/maps/api/staticmap?center={{location.zip}}&zoom=7&scale=1&size=300x300&maptype=roadmap&key=AIzaSyCnQ_QPnYxnH4JCxp62HRtQk2To8pUj_UQ&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff2944%7Clabel:1%7C{{location.zip}}">
-        <button class="btn btn-danger directionsBtn">Get Directions</button>
+        <a class="btn btn-danger waves-effect waves-light modal-trigger directionsBtn" ng-click="setSelectedDirection" ng-mouseenter="directionCall(location)">Get Directions</a>
       </div>
     </div>
   </div>
 </div>
+
+<div class="mockModal" ng-click="closeMockModal()" ng-show="viewModal">
+  <div class= "directions" style="width: 400px; max-height: 400px;">
+    <div id="map" style="width: 280px; height: 400px; float: left;"></div>
+    <div id="panel" style="width: 300px; float: right;"></div>
+  </div>
+ </div>
