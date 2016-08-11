@@ -1,0 +1,69 @@
+<div class="row container">
+  <div class="col s12" style="text-align: center"><h3>My Locations</h3>
+    <a href="#/new"><button class="btn btn-danger" ng-click="Remove(board.id)">Add New Location</button></a>
+  </div>
+
+
+
+<!-- <div class="container"> -->
+  <div class="row">
+    <div class="card col s12 l4" ng-repeat="location in locations">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" ng-src="{{location.image}}">
+        <span class="card-title">{{location.title}}</span>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><i class="material-icons right" ng-mouseenter="APIcall(location)">visibility</i></span>
+        <h2>{{location.title}}</h2>
+        <h3>{{location.location}}</h3>
+        <h5>Emission to be tested for: {{location.emissions}}</h5>
+        <button class="btn btn-danger" ng-click="remove(location)"><i class="small material-icons">delete</i></button>
+        <a href="#/locations/{{location.id}}"><button class="btn btn-danger" ng-click="edit()"><i class="small material-icons">edit</i></button></a>
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">{{location.title}}<i class="material-icons right">close</i></span>
+        <p>Zip code: {{location.zip}}</p>
+        <div id="weatherDiv">
+        <div class="weather">
+          <span>{{location.theWeather.forecastday[0].date.monthname}} {{location.theWeather.forecastday[0].date.day}}</span>
+          <img ng-src="{{location.theWeather.forecastday[0].icon_url}}" alt="weatherIcon">
+          <p>High: {{location.theWeather.forecastday[0].high.fahrenheit}}</p>
+          <p>Low: {{location.theWeather.forecastday[0].low.fahrenheit}}</p>
+        </div>
+        <div class="weather">
+          <span>{{location.theWeather.forecastday[1].date.monthname}} {{location.theWeather.forecastday[1].date.day}}</span>
+          <img ng-src="{{location.theWeather.forecastday[1].icon_url}}" alt="weatherIcon">
+          <p>High: {{location.theWeather.forecastday[1].high.fahrenheit}}</p>
+          <p>Low: {{location.theWeather.forecastday[1].low.fahrenheit}}</p>
+        </div>
+        <div class="weather">
+          <span>{{location.theWeather.forecastday[2].date.monthname}} {{location.theWeather.forecastday[2].date.day}}</span>
+          <img ng-src="{{location.theWeather.forecastday[2].icon_url}}" alt="weatherIcon">
+          <p>High: {{location.theWeather.forecastday[2].high.fahrenheit}}</p>
+          <p>Low: {{location.theWeather.forecastday[2].low.fahrenheit}}</p>
+        </div>
+        <div class="weather">
+          <span>{{location.theWeather.forecastday[3].date.monthname}} {{location.theWeather.forecastday[3].date.day}}</span>
+          <img ng-src="{{location.theWeather.forecastday[3].icon_url}}" alt="weatherIcon">
+          <p>High: {{location.theWeather.forecastday[3].high.fahrenheit}}</p>
+          <p>Low: {{location.theWeather.forecastday[3].low.fahrenheit}}</p>
+        </div>
+        <div class="weather">
+          <span>{{location.theWeather.forecastday[4].date.monthname}} {{location.theWeather.forecastday[4].date.day}}</span>
+          <img ng-src="{{location.theWeather.forecastday[4].icon_url}}" alt="weatherIcon">
+          <p>High: {{location.theWeather.forecastday[4].high.fahrenheit}}</p>
+          <p>Low: {{location.theWeather.forecastday[4].low.fahrenheit}}</p>
+        </div>
+        <img class="map" width="300" src="http://maps.googleapis.com/maps/api/staticmap?center={{location.zip}}&zoom=7&scale=1&size=300x300&maptype=roadmap&key=AIzaSyCnQ_QPnYxnH4JCxp62HRtQk2To8pUj_UQ&format=png&visual_refresh=true&markers=size:mid%7Ccolor:0xff2944%7Clabel:1%7C{{location.zip}}">
+        <a class="btn btn-danger waves-effect waves-light modal-trigger directionsBtn" ng-click="setSelectedDirection" ng-mouseenter="directionCall(location)">Get Directions</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mockModal" ng-click="closeMockModal()" ng-show="viewModal">
+  <div class= "directions" style="width: 400px; max-height: 400px;">
+    <div id="map" style="width: 280px; height: 400px; float: left;"></div>
+    <div id="panel" style="width: 300px; float: right;"></div>
+  </div>
+ </div>

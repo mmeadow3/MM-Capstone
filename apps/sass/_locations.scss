@@ -1,0 +1,63 @@
+
+.container{
+  width: 95%;
+  text-align: center;
+  padding: 10px 10px;
+}
+.row{
+  width: 100% !important;
+}
+.card{
+  display: inline-block !important;
+  width: 32% !important;
+  border: 1px solid black;
+  height: 700px;
+  margin: 5px 3px !important;
+  border-radius: 5px;
+  background-color: #9CACBC
+}
+// this is the image of the factory
+.activator{
+  width: 320px;
+  height: 240px;
+  margin-top: 3px !important;
+  border-radius: 5px;
+}
+
+// when card is flipped
+.weather{
+  display: inline-block;
+  width: 64px;
+  height: 160px;
+}
+#weatherDiv{
+  text-align: center !important;
+}
+.card-reveal{
+  background-color: #9CACBC !important;
+  padding-right: 20px!important;
+  padding-left: 0px !important;
+  margin:0;
+}
+
+// map image
+.map{
+   display: block!important;
+   border-radius: 5px!important;
+   margin: 20px auto!important;
+}
+.directionsBtn{
+margin: 20px auto;
+}
+// directions
+.mockModal {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21);
+    z-index: 1000;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    background-color: white;
+    color: black;
+    height: 100px;
+    width: 100px;
+}

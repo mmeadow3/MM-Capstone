@@ -1,0 +1,62 @@
+
+
+<!-- Location: {{selectedLocation.title}}</h4>
+<input type="text" name="name" ng-model="title" ng-show="edited" placeholder="enter text here">
+<h4>City and State: {{selectedLocation.location}}</h4>
+<input type="text" name="name" ng-model="location" ng-show="edited" placeholder="enter text here">
+<h4>Emissions: {{selectedLocation.emissions}}</h4>
+<input type="text" name="name" ng-model="emissions" ng-show="edited" placeholder="enter text here"> -->
+
+<h1>Edit: {{selectedLocation.title}}</h1><br>
+<div>
+<div class="row">
+   <div class="input-field col s12">
+     <input value="{{selectedLocation.title}}" type="text" ng-model="title" class="validate" ng-show="edited">
+     <label class="active" for="first_name2">Location: {{selectedLocation.title}}</label>
+   </div>
+ </div>
+  <div class="row">
+   <div class="input-field col s12">
+     <input value="{{selectedLocation.location}}" type="text" ng-model="location" class="validate" ng-show="edited">
+     <label class="active" for="first_name2">City and State: {{selectedLocation.location}}</label>
+   </div>
+ </div>
+ <div class="row">
+   <div class="input-field col s12">
+     <input value="{{selectedLocation.emissions}}" type="text" ng-model="emissions" class="validate" ng-show="edited">
+     <label class="active" for="first_name2">Emissions: {{selectedLocation.emissions}}</label>
+   </div>
+ </div>
+ <div class="md-padding">
+   <div>
+     <h1 class="md-title">Image Select</h1>
+     <div layout="row">
+       <md-input-container>
+         <label>Location</label>
+         <md-select ng-model="image">
+           <md-optgroup label="items">
+             <md-option value="{{item.url}}" ng-repeat="item in items" ng-model="selectedItem" md-selected-text="getSelectedText()">{{item.name}}</md-option>
+           </md-optgroup>
+         </md-select>
+       </md-input-container>
+     </div>
+   </div>
+ </div>
+ <div class="md-padding">
+   <div>
+     <h1 class="md-title">Zip Select</h1>
+     <div layout="row">
+       <md-input-container>
+         <label>Location</label>
+         <md-select ng-model="zip">
+           <md-optgroup label="items">
+             <md-option value="{{item.zip}}" ng-repeat="item in items" ng-model="selectedItem" md-selected-text="getSelectedText()">{{item.name}}</md-option>
+           </md-optgroup>
+         </md-select>
+       </md-input-container>
+     </div>
+   </div>
+ </div>
+ </div>
+ <button type="button" name="button" ng-click="edit(thingy)">Edit</button><br>
+ <button type="button" name="button" ng-click="save(thingy)" ng-show="edited">Save</button>

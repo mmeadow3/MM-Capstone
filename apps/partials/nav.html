@@ -1,0 +1,28 @@
+<img src="../images/index.jpg" class="backgroundImage" alt="Smokestacks" >
+
+
+
+
+
+<div class="navbar" ng-controller="NavCtrl">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Why I Quit My Job (The App)</a>
+      <a href="#" data-activates="mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul>
+      <a href="#/register" class="right hide-on-med-and-down" ng-show="!loggedIn">Sign In</a>
+      <a href="#/register" class="right hide-on-med-and-down" ng-click="logout()" ng-show="loggedIn">Logout</a>
+      </ul>
+      <ul class="right hide-on-med-and-down" ng-repeat="link in navItems">
+        <li><a href="{{link.url}}" ng-show="loggedIn">{{link.name}}</a></li>
+      </ul>
+      <!-- ////////////////////mobile view//////////////////////// -->
+      <ul class="side-nav" id="mobile" >
+        <li><a href="#/register" ng-show="!loggedIn">Sign In</a></li>
+        <li><a href="#/register" ng-click="logout()" ng-show="loggedIn">Logout</a></li>
+        <li><a ng-repeat="link in navItems" href="{{link.url}}">{{link.name}}</a></li>
+     </ul>
+     <!-- ////////////////end mobile view ///////////////////////////-->
+    </div>
+  </nav>
+</div>
