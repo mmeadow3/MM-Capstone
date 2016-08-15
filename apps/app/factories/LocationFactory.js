@@ -22,11 +22,11 @@ app.factory("LocationFactory", function(FirebaseURL, $q, $http, AuthFactory) {
           locations.push(locationCollection[key]);
         });
       }
-        resolve(locations)
+        resolve(locations);
       })
       .error(function(error) {
         reject(error);
-      })
+      });
     });
   };
 
@@ -38,7 +38,7 @@ app.factory("LocationFactory", function(FirebaseURL, $q, $http, AuthFactory) {
             $http.post(`${FirebaseURL}/locations.json`,
                 JSON.stringify(newLocation))
                 .success(function(ObjFromFirebase) {
-                    resolve(ObjFromFirebase)
+                    resolve(ObjFromFirebase);
                 })
                 .error(function (error) {
                     reject (error);
@@ -55,11 +55,11 @@ app.factory("LocationFactory", function(FirebaseURL, $q, $http, AuthFactory) {
         })
         .error(function(error) {
           reject(error);
-        })
+        });
       });
     };
 
 
-	return {getLocationList, postNewLocation, deleteLocation}
+	return {getLocationList, postNewLocation, deleteLocation};
 
 });

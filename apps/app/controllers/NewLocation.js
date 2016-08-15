@@ -17,7 +17,7 @@ app.controller("NewLocation", function($scope, LocationFactory, $location, AuthF
      {url: "images/Willaims compression 515 wilkes-barre, PA.jpg", name: "William St. 515", zip: "18705"},
      {url: "images/Williams 240 NJ.jpg", name: "William St. 240", zip: "07073"},
      {url: "images/Williams 517 Benton PA.gif", name: "William St. 517 ", zip: "17814"}
-   ]
+   ];
 
 
    $scope.selectedItem;
