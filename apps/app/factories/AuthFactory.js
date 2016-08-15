@@ -16,19 +16,19 @@ let currentUserId = null;
           users.push(userList[key]);
         });
       }
-        resolve(users)
+        resolve(users);
       })
       .error(function(error) {
         reject(error);
-      })
+      });
     });
-	}
+	};
 	  let createUser = function(newUser) {
     return $q(function(resolve, reject) {
       $http.post(`${FirebaseURL}/users.json`, ////////this posts to FB database///////////
         JSON.stringify(newUser))
       .success(function(ObjFromFirebase) {
-        resolve(ObjFromFirebase)    ////////this posts to FB database///////////
+        resolve(ObjFromFirebase);    ////////this posts to FB database///////////
       })
       .error(function(error) {
         reject(error);
@@ -49,6 +49,6 @@ let setUser = function(id) {
 	// console.log(currentUserId, "currentUserId")
 };
 
-	return {getUserList, createUser, getUser, setUser, isAuthenticated}
+	return {getUserList, createUser, getUser, setUser, isAuthenticated};
 
-})
+});
