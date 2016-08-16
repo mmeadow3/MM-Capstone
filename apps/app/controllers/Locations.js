@@ -34,5 +34,11 @@ $scope.setSelectedDirection = function(direction){
   $scope.selectedDirection = direction;
 };
 
+$scope.viewModal = true;
+
+$scope.closeModal = function(){
+  $scope.viewModal = !true
+};
+
 
 });

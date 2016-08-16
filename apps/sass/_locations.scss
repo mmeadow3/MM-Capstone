@@ -14,7 +14,7 @@
   height: 700px;
   margin: 5px 3px !important;
   border-radius: 5px;
-  background-color: #9CACBC
+  background-color: #9CACBC;
 }
 // this is the image of the factory
 .activator{
@@ -40,6 +40,19 @@
   margin:0;
 }
 
+#panel{
+  height: 420px!important;
+  text-align: center;
+}
+
+#map{
+  width: 400px;
+  height: 400px;
+  // position: absolute;
+  z-index: 1000!important;
+  text-align: center!important;
+  display: inline-block!important;
+}
 // map image
 .map{
    display: block!important;
@@ -49,15 +62,22 @@
 .directionsBtn{
 margin: 20px auto;
 }
+
 // directions
-.mockModal {
-    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21);
-    z-index: 1000;
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    background-color: white;
-    color: black;
-    height: 100px;
-    width: 100px;
+.adp #panel{
+  display: inline-block;
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.22), 0 12.5px px 0 rgba(0, 0, 0, 0.21)!important;
+  z-index: 1000!important;
+  position: absolute!important;
+  left: 0px!important;
+  top: 0px!important;
+  width:100%!important;
+  height:100%!important;
+  overflow: auto!important;
+  background-color: white;
+  color: black;
+  height: .2px;
+  width: .2px;
+  text-align: center!important;
+  border: 1px solid black!important;
 }
