@@ -1,6 +1,8 @@
 #Mike Meadows Capston
 A demonstation of the front end cirriculum milestones at NSS
 
+### To pull down, cd into apps and bower install and npm install 
+
 A CRUD app demonstrating the use of Firebase 
 
 This application uses Firebase database and login/register functions
