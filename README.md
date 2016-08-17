@@ -7,3 +7,5 @@ Google Maps Directions API
 WeatherUnderground API
 
 Styling done with Materialize CSS and Sass compiler 
+
+!https://imgur.com/VECxm6i
