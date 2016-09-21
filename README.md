@@ -1,4 +1,4 @@
-#Mike Meadows Capston
+#Mike Meadows Capstone
 A demonstation of the front end cirriculum milestones at NSS
 
 ### To pull down, cd into apps and bower install and npm install 
